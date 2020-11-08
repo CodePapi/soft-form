@@ -1,0 +1,42 @@
+{
+  "name": "soft-form",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^3.0.0",
+    "autoprefixer": "^9.8.6",
+    "cra-template": "1.1.0",
+    "postcss-cli": "^8.1.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.0",
+    "tailwindcss": "^1.9.6"
+  },
+  "scripts": {
+    "build:tailwind": "postcss ./src/tailwind.css -o ./src/tailwind.build.css",
+    "dev": "npm run build:tailwind && BROWSER=none react-scripts start",
+    "start": "react-scripts start",
+    "build": "NODE_ENV=production && npm run build:tailwind && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
