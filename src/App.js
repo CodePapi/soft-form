@@ -3,7 +3,7 @@ import "./tailwind.build.css";
 
 function App() {
   return (
-    <div className="antialiased text-gray-900 bg-gray-100 h-screen">
+    <div className="antialiased text-gray-900 bg-gray-200 h-full py-4">
       <Form />
     </div>
   );
