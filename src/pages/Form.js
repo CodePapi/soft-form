@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useHistory } from "react-router-dom";
-import FullNameField from "./FullNameField";
-import EmailField from "./EmailField";
-import PhoneField from "./PhoneField";
-import PasswordFields from "./PasswordFields";
-import CardNumberField from "./CardNumberField";
-import CardExpirDateField from "./CardExpirDateField";
-import CardPinField from "./CardPinField";
+import FullNameField from "../components/FullNameField";
+import EmailField from "../components/EmailField";
+import PhoneField from "../components/PhoneField";
+import PasswordFields from "../components/PasswordFields";
+import CardNumberField from "../components/CardNumberField";
+import CardExpirDateField from "../components/CardExpirDateField";
+import CardPinField from "../components/CardPinField";
 
 const Form = () => {
   const history = useHistory();

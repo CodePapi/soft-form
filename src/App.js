@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Form from "./Form";
-import Dashboard from "./Dashboard";
+import Form from "./pages/Form";
+import Dashboard from "./pages/Dashboard";
 import "./tailwind.build.css";
 
 function App() {
