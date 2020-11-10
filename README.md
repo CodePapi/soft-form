@@ -1,70 +1,65 @@
-<!-- # Getting Started with Create React App
+# soft-form
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+*A pure React form with some real-life validation scenarios* [View live](https://soft-form.netlify.app)
 
-## Available Scripts
+## How to run
 
-In the project directory, you can run:
+You should have [Node.js](https://nodejs.org) and npm installed to be able to run this application.
 
-### `yarn start`
+**Development Mode** `npm run dev`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Running the app in the development mode does not minify the Tailwind CSS build file.
+Once build is complete and app is running, visit [localhost:3000](http://localhost:3000) on your web browser
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Build** `npm run build`
 
-### `yarn test`
+Building the app generates a minified version of the app in the `public` folder. This minified version can be run locally with `npm run start:local` or deployed as a static website
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Start locally** `npm run start:local`
 
-### `yarn build`
+Starting locally builds a minified version of the app and opens it in a web browser
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tests
+[No tests yet]
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Form Fields Specifications
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Full name** `<FullNameField/>`
+	- Must not be less that 2 characters, must include a space and then second name
+- **Email** `<EmailField/>`
+	- Must be a valid email address
+- **Phone number** `<PhoneField/>`
+	- Must not start with '+234'
+	- Must start with '070', '080', '090', '081'
+- **Password** `<PasswordFields/>`
+	- Minimum of 6 characters
+	- Must contain at least one uppercase character, one number, special
+character
+- **Confirm password**
+	- Must match password field
+- **Credit/Debit card number** `<CardNumberField/>`
+	- Must match the ‘XXXX XXXX XXXX XXXX’ format.
+	-As you type, it automatically adds space to the numbers
+- **Expiration date**  `<CardExpirDateField/>`
+	- Must match 'MM/YY' format
+	- As you type 0123, it should fill the input as 01/23
+- **PIN** `<CardPinField/>`
+	- Should be 4 characters long
+	- Only accepts numbers
+	- Should be a password field
 
-### `yarn eject`
+The form's submit button should be disabled until all fields are valid
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+On clicking the submit button, user should be directed to a dashboard page.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Tools used
+1. [create-react-app](https://create-react-app.dev/)
+2. [react-router](https://reactrouter.com/)
+3. [Tailwind CSS](https://tailwindcss.com/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<!-- ## Documentation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To view a summary about how each form control field works, you can click on the link on each component in this file e.g [`<CardPinField/>`]().
 
-## Learn More
+Here is the full [documentation]() -->
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
