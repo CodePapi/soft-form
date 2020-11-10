@@ -21,7 +21,7 @@
     "build": "NODE_ENV=production && npm run build:tailwind && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:local": "npm run build && live-server ./public/",
+    "start:local": "npm run build && live-server ./build/",
     "format": "prettier --write src/**/*.{js,jsx}"
   },
   "eslintConfig": {
