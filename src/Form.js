@@ -82,7 +82,7 @@ const Form = () => {
         <form
           noValidate
           onSubmit={(ev) => navigateTo("/dashboard")}
-          className="bg-white shadow-md rounded px-8 pt-6 pb-4 mb-2"
+          className="bg-white rounded shadow px-8 pt-6 pb-4 mb-2"
         >
           <FullNameField
             styleOnErr={styleOnErr}
