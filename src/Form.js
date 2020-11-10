@@ -30,7 +30,6 @@ const Form = () => {
 
   useEffect(() => {
     const formValidity = validityFields.every((field) => field.validity);
-    console.log(validityFields);
     setIsFormValid(formValidity);
   }, [validityFields]);
 
