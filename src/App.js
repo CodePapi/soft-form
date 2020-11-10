@@ -1,9 +1,17 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Form from "./pages/Form";
+import Dashboard from "./pages/Dashboard";
 import "./tailwind.build.css";
 
 function App() {
   return (
-    <div className="antialiased text-gray-900 bg-gray-200 h-screen w-screen">
-      Hello Softcom!
+    <div className="antialiased font-sans text-gray-900 bg-gray-200 h-full">
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Form} />
+          <Route exact path="/dashboard" component={Dashboard} />
+        </Switch>
+      </Router>
     </div>
   );
 }
