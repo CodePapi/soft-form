@@ -5,6 +5,7 @@ const PhoneField = ({
   fieldName = "phone",
   setFieldValidity,
   prvtNonNumeric,
+  styleOnErr = (f) => f,
 }) => {
   const [phone, setPhone] = useState({ value: "", isValid: false });
 
@@ -14,9 +15,10 @@ const PhoneField = ({
 
   const validatePhone = (ev) => {
     // const errors = {};
-    const { value, validity } = ev.target;
+    const { value, validity, id } = ev.target;
     const isValid = validity.valid ? true : false;
     setPhone({ value, isValid });
+    styleOnErr(id, isValid);
   };
 
   return (
@@ -43,6 +45,7 @@ const PhoneField = ({
 };
 
 PhoneField.propTypes = {
+  styleOnErr: PropTypes.func,
   fieldName: PropTypes.string,
   setFieldValidity: PropTypes.func.isRequired,
   prvtNonNumeric: PropTypes.func.isRequired,

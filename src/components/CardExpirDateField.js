@@ -5,6 +5,7 @@ const CardExpirDateField = ({
   setFieldValidity,
   prvtNonNumeric,
   fieldName = "cardExpirDate",
+  styleOnErr = (f) => f,
 }) => {
   const [cardExpirDate, setCardExpirDate] = useState({
     value: "",
@@ -16,7 +17,7 @@ const CardExpirDateField = ({
   }, [cardExpirDate.isValid, setFieldValidity, fieldName]);
 
   const validateCardExpirDate = (ev) => {
-    let { value, validity } = ev.target;
+    let { value, validity, id } = ev.target;
     const isValid = validity.valid;
     if (value && value.length > 1) {
       value = value.replace(/\//g, ""); // remove all forward slashes from input value
@@ -24,8 +25,9 @@ const CardExpirDateField = ({
       value.splice(2, 0, "/");
       value = value.join("");
     }
-    document.getElementById(ev.target.id).value = value;
+    document.getElementById(id).value = value;
     setCardExpirDate({ value, isValid });
+    styleOnErr(id, isValid);
   };
 
   return (
@@ -50,12 +52,12 @@ const CardExpirDateField = ({
         onChange={validateCardExpirDate}
         onKeyUp={(ev) => {
           // to enable backspacing without issues...
-          let { value, validity } = ev.target;
+          let { value, validity, id } = ev.target;
           const isValid = validity.valid;
           if (ev.key === "Backspace" && value.length === 3) {
             value = value.substring(0, 2);
           }
-          document.getElementById(ev.target.id).value = value;
+          document.getElementById(id).value = value;
           setCardExpirDate({ value, isValid });
         }}
       />
@@ -64,6 +66,7 @@ const CardExpirDateField = ({
 };
 
 CardExpirDateField.propTypes = {
+  styleOnErr: PropTypes.func,
   prvtNonNumeric: PropTypes.func.isRequired,
   fieldName: PropTypes.string,
   setFieldValidity: PropTypes.func.isRequired,

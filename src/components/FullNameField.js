@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-const FullNameField = ({ fieldName = "fullName", setFieldValidity }) => {
+const FullNameField = ({
+  fieldName = "fullName",
+  setFieldValidity,
+  styleOnErr = (f) => f,
+}) => {
   const [fullName, setFullName] = useState({ value: "", isValid: false });
 
   useEffect(() => {
@@ -10,7 +14,7 @@ const FullNameField = ({ fieldName = "fullName", setFieldValidity }) => {
 
   const validateFullName = (ev) => {
     // const errors = {};
-    const { value, validity } = ev.target;
+    const { value, validity, id } = ev.target;
     const isValid =
       validity.valid &&
       value.split(" ")[0].length >= 2 &&
@@ -19,6 +23,7 @@ const FullNameField = ({ fieldName = "fullName", setFieldValidity }) => {
         ? true
         : false;
     setFullName({ value, isValid });
+    styleOnErr(id, isValid);
   };
 
   return (
@@ -45,6 +50,7 @@ const FullNameField = ({ fieldName = "fullName", setFieldValidity }) => {
 };
 
 FullNameField.propTypes = {
+  styleOnErr: PropTypes.func,
   fieldName: PropTypes.string,
   setFieldValidity: PropTypes.func.isRequired,
 };
