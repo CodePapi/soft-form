@@ -5,11 +5,11 @@ import "./tailwind.build.css";
 
 function App() {
   return (
-    <div className="antialiased text-gray-900 bg-gray-200 h-full py-4">
+    <div className="antialiased font-sans text-gray-900 bg-gray-200 h-full">
       <Router>
         <Switch>
-          <Route exact path="/" component={Form} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/dashboard" component={Form} />
+          <Route exact path="/" component={Dashboard} />
         </Switch>
       </Router>
     </div>

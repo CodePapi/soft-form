@@ -77,7 +77,7 @@ const Form = () => {
 
   return (
     <React.Fragment>
-      <div className="w-full sm:max-w-sm md:max-w-md mt-5 mx-auto">
+      <div className="mx-5 sm:mx-auto sm:max-w-sm md:max-w-md py-5 ">
         <h2 className="text-xl font-semibold text-center mb-2">Soft Form</h2>
         <form
           noValidate

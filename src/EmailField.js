@@ -31,6 +31,7 @@ const EmailField = ({
         required
         placeholder="chukwuma@mailprovider.domain"
         id="email"
+        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
         value={email.value}
         onChange={validateEmail}
         onBlur={(ev) => setEmail(email)}
