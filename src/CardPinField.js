@@ -5,6 +5,7 @@ const CardPinField = ({
   prvtNonNumeric,
   fieldName = "cardPin",
   setFieldValidity,
+  styleOnErr = (f) => f,
 }) => {
   const [cardPin, setCardPin] = useState({ value: "", isValid: false });
 
@@ -14,9 +15,10 @@ const CardPinField = ({
 
   const validateCardPin = (ev) => {
     // const errors = {};
-    const { value, validity } = ev.target;
+    const { value, validity, id } = ev.target;
     const isValid = validity.valid ? true : false;
     setCardPin({ value, isValid });
+    styleOnErr(id, isValid);
   };
 
   return (
@@ -41,6 +43,7 @@ const CardPinField = ({
 };
 
 CardPinField.propTypes = {
+  styleOnErr: PropTypes.func,
   fieldName: PropTypes.string,
   prvtNonNumeric: PropTypes.func.isRequired,
   setFieldValidity: PropTypes.func.isRequired,

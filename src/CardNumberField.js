@@ -5,6 +5,7 @@ const CardNumberField = ({
   fieldName = "cardNumber",
   prvtNonNumeric,
   setFieldValidity,
+  styleOnErr = (f) => f,
 }) => {
   const [cardNumber, setCardNumber] = useState({ value: "", isValid: true });
 
@@ -13,7 +14,7 @@ const CardNumberField = ({
   }, [cardNumber.isValid, fieldName, setFieldValidity]);
 
   const validateCardNumber = (ev) => {
-    let { value, validity } = ev.target;
+    let { value, validity, id } = ev.target;
     const isValid = validity.valid ? true : false;
     if (value && value.length) {
       value = value.replace(/\s/g, ""); // remove all spaces
@@ -30,8 +31,9 @@ const CardNumberField = ({
         value = value.trim();
       }
     }
-    document.getElementById(ev.target.id).value = value;
+    document.getElementById(id).value = value;
     setCardNumber({ value, isValid });
+    styleOnErr(id, isValid);
   };
 
   return (
@@ -74,6 +76,7 @@ const CardNumberField = ({
 };
 
 CardNumberField.propTypes = {
+  styleOnErr: PropTypes.func,
   fieldName: PropTypes.string,
   prvtNonNumeric: PropTypes.func.isRequired,
   setFieldValidity: PropTypes.func.isRequired,

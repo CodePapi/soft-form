@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-const PasswordFields = ({ fieldName = "passwords", setFieldValidity }) => {
+const PasswordFields = ({
+  fieldName = "passwords",
+  setFieldValidity,
+  styleOnErr = (f) => f,
+}) => {
   const [password, setPassword] = useState({ value: "", isValid: false });
   const [confPassword, setConfPassword] = useState({
     value: "",
@@ -14,15 +18,17 @@ const PasswordFields = ({ fieldName = "passwords", setFieldValidity }) => {
   }, [password.isValid, confPassword.isValid, fieldName, setFieldValidity]);
 
   const validatePassword = (ev) => {
-    const { value, validity } = ev.target;
+    const { value, validity, id } = ev.target;
     const isValid = validity.valid ? true : false;
     setPassword({ value, isValid });
+    styleOnErr(id, isValid);
   };
 
   const validateConfPassword = (ev) => {
-    const { value, validity } = ev.target;
+    const { value, validity, id } = ev.target;
     const isValid = validity.valid && value === password.value ? true : false;
     setConfPassword({ value, isValid });
+    styleOnErr(id, isValid);
   };
 
   return (
@@ -71,6 +77,7 @@ const PasswordFields = ({ fieldName = "passwords", setFieldValidity }) => {
   );
 };
 PasswordFields.propTypes = {
+  styleOnErr: PropTypes.func,
   fieldName: PropTypes.string,
   setFieldValidity: PropTypes.func.isRequired,
 };
