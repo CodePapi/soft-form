@@ -13,11 +13,11 @@ Once build is complete and app is running, visit [localhost:3000](http://localho
 
 **Build** `npm run build`
 
-Building the app generates a minified version of the app in the `public` folder. This minified version can be run locally with `npm run start:local` or deployed as a static website
+Building the app generates a minified version of the app in the `build` folder. The generated `build` folder can be deployed as a static website
 
 **Start locally** `npm run start:local`
 
-Starting locally builds a minified version of the app and opens it in a web browser
+Starting locally builds a minified version of the app and opens it in a web browser at [localhost:8080](http://localhost:8080)
 
 ## Tests
 [No tests yet]
