@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Form from "./pages/Form";
 import Dashboard from "./pages/Dashboard";
 import "./tailwind.build.css";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route exact path="/dashboard" component={Dashboard} />
         </Switch>
       </Router>
+      <Footer/>
     </div>
   );
 }
