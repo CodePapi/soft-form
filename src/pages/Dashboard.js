@@ -1,5 +1,4 @@
 import React from "react";
-import softcomLogo from "../img/softcom.svg";
 
 export default function Dashboard() {
   return (
