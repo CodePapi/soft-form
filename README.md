@@ -2,7 +2,7 @@
 
 *A pure React form with some real-life validation scenarios*
 
-<center>[Documentation](./DOCUMENTATION.md) | [Demo](https://soft-form.netlify.app)</center>
+<div align="center"> [Documentation](./DOCUMENTATION.md) | [Demo](https://soft-form.netlify.app) </div>
 
 ## How to run
 
@@ -30,10 +30,3 @@ Starting locally builds a minified version of the app and opens it in a web brow
 1. [create-react-app](https://create-react-app.dev/)
 2. [react-router](https://reactrouter.com/)
 3. [Tailwind CSS](https://tailwindcss.com/)
-
-<!-- ## Documentation
-
-To view a summary about how each form control field works, you can click on the link on each component in this file e.g [`<CardPinField/>`]().
-
-Here is the full [documentation]() -->
-
