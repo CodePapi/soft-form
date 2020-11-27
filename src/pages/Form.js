@@ -102,7 +102,6 @@ const Form = () => {
           />
           <PasswordFields
             styleOnErr={styleOnErr}
-            fieldName="passwords"
             setFieldValidity={handleSetValidity}
           />
           <CardNumberField

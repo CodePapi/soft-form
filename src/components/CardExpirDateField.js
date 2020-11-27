@@ -34,7 +34,7 @@ const CardExpirDateField = ({
     <div className="mt-3">
       <label
         className="block text-gray-900 font-medium my-1"
-        htmlFor="cardExpirDate"
+        htmlFor={fieldName}
       >
         Expiration date
       </label>
@@ -42,7 +42,7 @@ const CardExpirDateField = ({
         className="tracking-wide appearance-none outline-none border-2 rounded w-full p-2 text-gray-900 leading-tight border-gray-400 focus:border-gray-600"
         type="text"
         placeholder="MM/YY"
-        id="cardExpirDate"
+        id={fieldName}
         required
         minLength="5"
         maxLength="5"

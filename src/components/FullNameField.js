@@ -30,7 +30,7 @@ const FullNameField = ({
     <div>
       <label
         className="block text-gray-900 font-medium my-1"
-        htmlFor="fullName"
+        htmlFor={fieldName}
       >
         Full name
       </label>
@@ -39,7 +39,7 @@ const FullNameField = ({
         type="text"
         placeholder="Chukwuma Ciroma"
         minLength="2"
-        id="fullName"
+        id={fieldName}
         value={fullName.value}
         required
         onChange={validateFullName}
