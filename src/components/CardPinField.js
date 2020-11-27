@@ -23,13 +23,13 @@ const CardPinField = ({
 
   return (
     <div className="mt-3">
-      <label className="block text-gray-900 font-medium my-1" htmlFor="cardPin">
+      <label className="block text-gray-900 font-medium my-1" htmlFor={fieldName}>
         Card PIN
       </label>
       <input
         className="tracking-wide appearance-none outline-none border-2 rounded w-full p-2 text-gray-900 leading-tight border-gray-400 focus:border-gray-600"
         type="password"
-        id="cardPin"
+        id={fieldName}
         required
         pattern="^\d+$"
         minLength="4"

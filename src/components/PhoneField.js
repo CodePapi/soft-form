@@ -23,7 +23,7 @@ const PhoneField = ({
 
   return (
     <div className="mt-3">
-      <label className="block text-gray-900 font-medium my-1" htmlFor="phone">
+      <label className="block text-gray-900 font-medium my-1" htmlFor={fieldName}>
         Phone number
       </label>
       <input
@@ -34,7 +34,7 @@ const PhoneField = ({
         pattern="^(0)?(80|81|70|90)[0-9]{8}"
         minLength="11"
         maxLength="11"
-        id="phone"
+        id={fieldName}
         value={phone.value}
         onChange={validatePhone}
         onKeyPress={prvtNonNumeric}

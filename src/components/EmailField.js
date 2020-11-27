@@ -22,7 +22,7 @@ const EmailField = ({
 
   return (
     <div className="mt-3">
-      <label className="block text-gray-900 font-medium my-1" htmlFor="email">
+      <label className="block text-gray-900 font-medium my-1" htmlFor={fieldName}>
         Email
       </label>
       <input
@@ -30,7 +30,7 @@ const EmailField = ({
         type="email"
         required
         placeholder="chukwuma@mailprovider.domain"
-        id="email"
+        id={fieldName}
         pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
         value={email.value}
         onChange={validateEmail}

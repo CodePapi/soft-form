@@ -40,7 +40,7 @@ const CardNumberField = ({
     <div className="mt-3">
       <label
         className="block text-gray-900 font-medium my-1"
-        htmlFor="cardNumber"
+        htmlFor={fieldName}
       >
         Credit/Debit card number
       </label>
@@ -51,7 +51,7 @@ const CardNumberField = ({
         maxLength="19"
         minLength="19"
         pattern="(\d{4} \d{4} \d{4} \d{4})"
-        id="cardNumber"
+        id={fieldName}
         required
         defaultValue={cardNumber.value}
         onKeyPress={prvtNonNumeric}
