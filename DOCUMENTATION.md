@@ -8,7 +8,7 @@ The `value` each field emits is the value in the input field. The `validity` of 
 
 ## Notes
 
-Only Vanilla JavaScript and [HTML5 Constraint Validation APIs](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validationonly were used. As such, the algorithm of each input component field can be ported to other frameworks as long as the functions attached to the keyboard events and the validation contraints on each input field is maintaned.
+Only Vanilla JavaScript and [HTML5 Constraint Validation APIs](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validationonly) were used. As such, the algorithm of each input component field can be ported to other frameworks as long as the functions attached to the keyboard events and the validation contraints on each input field is maintaned.
 
 ## Input Fields
 
