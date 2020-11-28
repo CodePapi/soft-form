@@ -2,7 +2,9 @@
 
 *A pure React form with some real-life validation scenarios*
 
-[Documentation](./DOCUMENTATION.md) | [Demo](https://soft-form.netlify.app)
+[Documentation](./DOCUMENTATION.md) 
+
+<!-- | [Demo](https://soft-form.netlify.app) -->
 
 ## How to run
 
